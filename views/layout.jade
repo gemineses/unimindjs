@@ -1,7 +1,14 @@
 doctype html
 html
   head
-    title= title
+    title Unimind
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    link(rel='stylesheet', href='/stylesheets/materialize.css')
+    link(rel='shortcut icon' type='image/x-icon' href='images/icon.png')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+    script(type='text/javascript' src='javascripts/jquery.js')
+    script(src='javascripts/materialize.js')
+  block index
+    body
+  block content
+    body.indexWallpaper

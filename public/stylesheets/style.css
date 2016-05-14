@@ -1,8 +1,69 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 a {
-  color: #00B7FF;
+  color: #339966;
+}
+
+.indexWallpaper{
+	background-image: url('../images/indexWallpaper.jpg');
+}
+
+/*Styles palleton*/
+
+.colorWhite {
+	color:#FFF;
+}
+.rgbGray {
+	color:rgba(255, 255, 255, 0.8);
+}
+.color1 {
+	color:#396;
+}
+
+/*Material Design Alters*/
+.notBorder{
+	border:0px !important;
+}
+
+.rowFooter{
+	margin-bottom: 0px !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+
+/*Scroll main container*/
+
+div.scroll {
+	max-height: 600px;
+    overflow: auto;
+
+}
+::-webkit-scrollbar { 
+	display: none; 
+}
+
+.textRed{
+	color:red;
+}
+.textGreen{
+	color:green;
+}
+.textBlue{
+	color:blue;
+}
+.textBlack{
+	color:black;
 }
