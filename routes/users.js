@@ -3,7 +3,14 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('users', { title: 'Express' });
+	  //session routes
+	  var sess;
+  	sess = req.session;
+		if(sess.email){
+			res.render('users', { title: 'Express' });
+		}else{
+		  res.redirect('/index');
+		}
 });
 
 module.exports = router;

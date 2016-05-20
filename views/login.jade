@@ -5,20 +5,22 @@ block content
     include header
   main
     .row
-      .col.l4.offset-l4
-        .card.medium
-          .card-image
-            img(src='images/eddie.jpg')
-            span(class='card-title') Create account
-          .card-content
-            .row
-              .input-field.col.s6
-                i.material-icons.prefix account_circle
-                input(id='icon_prefix' type='text' class='validate')
-                label(for='icon_prefix') User Name
-              .input-field.col.s6
-                i.material-icons.prefix visibility_off
-                input(id='icon_telephone' type='tel' class='validate')
-                label(for='icon_telephone') Password
-          .card-action
-            a(href='#' class='waves-effect waves-light btn') Save
+      form.col.l4.offset-l4(method='POST' action='login')
+        .row
+          .input-field
+            i.material-icons.prefix account_circle
+            input(id='icon_prefix' type='text' class='validate' name='username')
+            label(for='icon_prefix') User Name
+        .row
+          .input-field
+            i.material-icons.prefix visibility_off
+            input(id='icon_password' type='tel' class='validate' name='password')
+            label(for='icon_password') Password
+        .row
+          .input-field
+            i.material-icons.prefix visibility_off
+            input(id='icon_confirm_password' type='tel' class='validate' name='confirmpassword')
+            label(for='icon_confirm_password') Confirm password
+        .row
+          .col.l4
+            input(type='submit' class='waves-effect waves-light btn' value='Save')
