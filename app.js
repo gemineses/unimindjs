@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var login = require('./routes/login');
 var users = require('./routes/users');
+var models = require('./models/models');
 
 var app = express();
 
@@ -43,8 +44,9 @@ app.use('/index', index);
 app.use('/users', users);
 app.use('/login', login);
 
-app.post("/login", function(req, res){
-
+app.post("/createAccount", function(req, res){
+  createAccount = require('./controllers/createAccount');
+  createAccount.create(req.body, res);
 });
 
 
