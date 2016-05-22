@@ -33,6 +33,24 @@ user.exist = function(connection, user, callback){
 	});
 };
 
+user.valUserPass = function(connection, user, sess, callback){
+	query = 'SELECT * FROM USERS WHERE USER_NAME="'+user.username+'" AND USER_PASS="'+user.password+'"';
+	console.log(query);
+	connection.query(query, function(err, rows, fields){
+		if (err) throw err;
+
+		if(rows==''){
+			callback(false);	
+		}else{
+			sess.user_id = rows[0].USR_ID;
+			sess.user_name = rows[0].USER_NAME;
+			sess.user_pass = rows[0].USER_PASS;
+			callback(true);
+		}
+		
+	});
+}
+
 user.desp=function(){
 	//console.log('desplegando');
 };

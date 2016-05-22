@@ -6,10 +6,10 @@ router.get('/', function(req, res, next) {
 	  //session routes
 	var sess;
   	sess = req.session;
-		if(sess.email){
+		if(sess.user_id){
 			res.render('users', { title: 'Express' });
 		}else{
-		  res.redirect('/index');
+		  	res.redirect('/index');
 		}
 });
 

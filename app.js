@@ -33,7 +33,8 @@ var sess;
 
 app.get('/', function(req, res){
   sess = req.session;
-  if(sess.email){
+  console.log(sess);
+  if(sess.user_id){
     res.redirect('/users');
   }else{
     res.redirect('/index');
@@ -48,7 +49,10 @@ app.post("/createAccount", function(req, res){
   createAccount = require('./controllers/createAccount');
   createAccount.create(req.body, res);
 });
-
+app.post("/login", function(req, res){
+  login = require('./controllers/login');
+  login.sessionCheck(req, res);
+});
 
 
 // catch 404 and forward to error handler

@@ -1,3 +1,27 @@
+function login(){
+	username = document.getElementById('txt_username').value;
+	password = document.getElementById('txt_password').value;
+	if(username=='' || password==''){
+		document.getElementById('errormsg').innerHTML="<h6 class='textRed'>Fill all the fields</h6>";
+	}else{
+		document.getElementById('errormsg').innerHTML="";
+		$.ajax({
+			type: 'POST',
+			url: 'login',
+			data: {"username": username, "password":password},
+			success: function(response){
+				data = JSON.parse(response);
+				if(data.res==''){
+					document.getElementById('errormsg').innerHTML="<h6 class='textRed'>"+data.msg+"</h6>";
+				}else{
+					console.log('Welcome!');
+					window.location.href = "/";
+				}
+			}
+		});
+	}
+}
+
 function valempty(){
 	username=document.getElementById('txt_username').value;
 	password=document.getElementById('txt_password').value;
